@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+          #out {
+            padding: 10px;
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+          }
+          .line {
+            display: inline;
+          }
+          .in {
+            padding: 10px;
+          }
+        </style>
+      </head>
+      <body>
+        <h1>JS Task 4</h1>
+        <div id="out">
+          <div class="in">
+            <button class="date" style="margin-right: 60px" onclick="date()">
+              Show date
+            </button>
+            <button class="time" onclick="time()" value="ans">Show Time</button>
+          </div>
+          <p id="res"></p>
+        </div>
+        <script>
+          const date = function () {
+            var date = new Date();
+            var n =
+              date.getFullYear() +
+              "-" +
+              (date.getMonth() + 1) +
+              "-" +
+              date.getDate();
+            document.getElementById("res").textContent = `Date is ${n} `;
+          };
+
+          const time = function () {
+            var d = new Date();
+            var n = d.toLocaleTimeString();
+            document.getElementById("res").textContent = `Time is ${n} `;
+          };
+        </script>
+      </body>
+    </html>
+  </body>
+</html>

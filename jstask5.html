@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task-5</title>
+    <style>
+      label {
+        display: inline-block;
+        width: 70px;
+        margin: 8px;
+      }
+      input[type="submit"] {
+        margin-left: 90px;
+      }
+    </style>
+    <script>
+      function validate() {
+        var e1 = document.getElementById("err1");
+        var e2 = document.getElementById("err2");
+        var e3 = document.getElementById("err3");
+        var e4 = document.getElementById("err4");
+
+        var n1 = document.getElementById("n");
+        var em = document.getElementById("e");
+        var w1 = document.getElementById("w");
+        var t1 = document.getElementById("t");
+        flag = 1;
+        if (n1.value === "") {
+          e1.innerHTML = " This field is required";
+          n1.style.border = "1px solid red";
+          flag = 0;
+        }
+        const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+        if (!emailRegex.test(em.value)) {
+          e2.innerHTML = " A valid email address is required";
+          em.style.border = "1px solid red";
+          flag = 0;
+        }
+
+        const webRegex = /^(www\.)?([a-zA-Z0-9-]+\.[a-zA-Z]{2,})(\/\S*)?$/;
+        if (!webRegex.test(w1.value)) {
+          e3.innerHTML = " A valid url is required";
+          w1.style.border = "1px solid red";
+          flag = 0;
+        }
+
+        if (t1.value === "") {
+          e4.innerHTML = " This field is required";
+          t1.style.border = "1px solid red";
+          flag = 0;
+        }
+        if (flag == 1) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form onsubmit="return validate()">
+      <label>Name: </label><input class="color" type="text" id="n" /><span
+        id="err1"
+        style="color: red"
+      ></span>
+      <br />
+      <label>Email: </label><input class="color" type="text" id="e" /><span
+        id="err2"
+        style="color: red"
+      ></span>
+      <br />
+      <label>Website: </label><input class="color" type="text" id="w" /><span
+        id="err3"
+        style="color: red"
+      ></span>
+      <br />
+      <label>Message:</label>
+      <textarea class="color" id="t" rows="5" columns="20"></textarea
+      ><span id="err4" style="color: red"></span>
+      <br />
+      <input class="color" type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

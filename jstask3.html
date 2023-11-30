@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #out {
+        padding: 10px;
+        width: 300px;
+        height: 200px;
+        border: 1px solid black;
+      }
+      .line {
+        display: inline;
+      }
+      .in {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JS Task 3</h1>
+    <div id="out">
+      <div class="in">
+        <p class="line">1st number:</p>
+        <input type="number" id="one" />
+      </div>
+      <div class="in">
+        <p class="line">2st number:</p>
+        <input type="number" id="two" />
+      </div>
+      <div class="in">
+        <button class="mul" style="margin-right: 60px" onclick="mul()">
+          Multiply
+        </button>
+        <button class="div" onclick="div()" value="ans">Divide</button>
+      </div>
+      <p id="res"></p>
+    </div>
+    <script>
+      const mul = function () {
+        let a = document.getElementById("one").value;
+        let b = document.getElementById("two").value;
+        document.getElementById("res").textContent = `The result is ${a * b}`;
+      };
+      const div = function () {
+        let a = document.getElementById("one").value;
+        let b = document.getElementById("two").value;
+        document.getElementById("res").textContent = `The result is ${a / b}`;
+        console.log(a / b);
+      };
+    </script>
+  </body>
+</html>
